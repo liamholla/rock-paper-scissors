@@ -12,6 +12,13 @@
         //We are going to play a game of rock, paper, scissors with a computer
         //Let's write out the steps
 
+        //Set up the initial score for user and computer
+        let userScore = 0;
+        let computerScore = 0;
+
+
+        //Make a function that will play a round of RPS
+        function playRound(userRPS) {
 
         //Assign a random number between 1-3, this will be the computer guess and will
         //act as a proxy for R,P,S.
@@ -32,7 +39,7 @@
         
         //Assign 1,2,3 and ROCK, PAPER, SCISSORS
         let computerRPS ; 
-        switch(computerGuess ) {
+        switch(computerGuess) {
             case 1:
                 computerRPS = "rock";
                 break;
@@ -46,7 +53,7 @@
         console.log(`Computer RPS = ${computerRPS}`)
 
         //Take the user guess of R,P,S
-        let userRPS = prompt("Guess rock, paper or scissors").toLowerCase()
+        userRPS = prompt("Guess rock, paper or scissors").toLowerCase()
         console.log(`User RPS = ${userRPS}`)
 
 
@@ -74,26 +81,51 @@
             roundWinner = "COMPUTER WIN";
         }
 
+        return roundWinner;
+    }
 
-        console.log(roundWinner) 
+        //Make a function that will increase the score per round
+        function score() {
 
-        
-        //Set up the initial score for user and computer
-        let userScore = 0;
-        let computerScore = 0;
-
+        let roundWinner = playRound();
         //After a win, add 1 to the score of either the user or computer
-
         if (roundWinner === "USER WIN") {
             userScore++;
         }
-
         if (roundWinner === "COMPUTER WIN") {
             computerScore++;
         }
+        console.log(roundWinner)
+        return (`USER ${userScore} - ${computerScore} COMPUTER`)
+        }
+    
+        //Make a function that will play 5 rounds of RPS
+        function game() {
+        console.log("%cGAME 1" , "color:red; font-size 14px")
+        console.log(score())
+        console.log("%cGAME 2" , "color:red; font-size 14px")
+        console.log(score())
+        console.log("%cGAME 3" , "color:red; font-size 14px")
+        console.log(score())
+        console.log("%cGAME 4" , "color:red; font-size 14px")
+        console.log(score())
+        console.log("%cGAME 5" , "color:red; font-size 14px")
+        console.log(score())
 
-        console.log(`USER ${userScore} - ${computerScore} COMPUTER`)
+        let winner; if(userScore === computerScore) {
+            "It's a draw!"
+        }
+        else if(userScore > computerScore) {
+            "You win!"
+        }
+        else {
+            "The computer won!"
+        }
 
+        return winner;
+        }
+
+        console.log(game());
 
         //Repeat all of the above until either the user or computer gets a score of 5
 
