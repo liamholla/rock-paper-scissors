@@ -12,6 +12,7 @@
         //We are going to play a game of rock, paper, scissors with a computer
         //Let's write out the steps
 
+
         //Assign a random number between 1-3, this will be the computer guess and will
         //act as a proxy for R,P,S.
 
@@ -45,9 +46,9 @@
         console.log(`Computer RPS = ${computerRPS}`)
 
         //Take the user guess of R,P,S
-
         let userRPS = prompt("Guess rock, paper or scissors").toLowerCase()
         console.log(`User RPS = ${userRPS}`)
+
 
         //If user = computer then DRAW
         //If user = rock and computer = scissors then HUMAN WIN
@@ -57,10 +58,44 @@
         //If user = scissors and computer = paper then HUMAN WIN
         //If user = scissors and computer = rock then COMPUTER WIN
 
+        let roundWinner ;  if (userRPS === computerRPS) {
+            roundWinner = "DRAW";
+        } else if ((userRPS === "rock") && (computerRPS === "scissors")) {
+            roundWinner =  "USER WIN";
+        } else if ((userRPS === "rock") && (computerRPS === "paper")) {
+            roundWinner =  "COMPUTER WIN";
+        } else if ((userRPS === "paper") && (computerRPS === "rock")) {
+            roundWinner = "USER WIN";
+        } else if ((userRPS === "paper") && (computerRPS === "scissors")) {
+            roundWinner = "COMPUTER WIN";
+        } else if ((userRPS === "scissors") && (computerRPS === "paper")) {
+            roundWinner = "USER WIN";
+        } else if ((userRPS === "scissors") && (computerRPS === "rock")) {
+            roundWinner = "COMPUTER WIN";
+        }
+
+
+        console.log(roundWinner) 
+
+        
+        //Set up the initial score for user and computer
+        let userScore = 0;
+        let computerScore = 0;
+
         //After a win, add 1 to the score of either the user or computer
 
-        //Repeat all of the above until either the user or computer gets a score of 5
+        if (roundWinner === "USER WIN") {
+            userScore++;
+        }
 
+        if (roundWinner === "COMPUTER WIN") {
+            computerScore++;
+        }
+
+        console.log(`USER ${userScore} - ${computerScore} COMPUTER`)
+
+
+        //Repeat all of the above until either the user or computer gets a score of 5
 
     </script>
 </body>
