@@ -1,0 +1,69 @@
+body {
+    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Open Sans', sans-serif;
+}
+
+img {
+  object-fit: cover;
+  height: 300px;
+  width: 300px;
+  clip-path: circle();
+  margin: 20px;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#currentScoreText {
+    font-size: 40px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#currentRoundText {
+    height: 20px;
+}
+
+button {
+    background-color: #225cbb;
+    color: #e5e7eb;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    width: fit-content;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transition-duration: 0.4s;
+    text-decoration: none;
+}
+
+
+button:hover {
+    background-color: #e5e7eb;
+    color: #225cbb;
+     font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    width: fit-content;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transition-duration: 0.4s;
+}
