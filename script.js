@@ -99,15 +99,26 @@ btnList.forEach(function (btn) {
 
     //Make a function that will increase the score per round
     function score() {
+
+      // Define the whoWon constant to be used to fill in the text
+
+      const whoWon = document.querySelector("#whoWonText");
+
       //After a win, add 1 to the score of either the user or computer
+      // Fill in the whoWonText
       if (roundWinner === "USER WIN") {
         userScore++;
+        whoWon.textContent = "You won this round!";
       }
-      if (roundWinner === "COMPUTER WIN") {
+      else if (roundWinner === "COMPUTER WIN") {
         computerScore++;
+        whoWon.textContent = "The computer won this round!";
+      }
+      else {
+        whoWon.textContent = "It was a draw!";
       }
       return `USER ${userScore} - ${computerScore} COMPUTER`;
-    }
+    } 
 
     // Create a current score variable
     currentScore = score();
@@ -122,6 +133,7 @@ btnList.forEach(function (btn) {
 
     console.log(`You have played ${roundNumber} rounds`);
 
+
     //Update the message when the user of computer gets to 5
     if (userScore === 5) {
       scoreText.innerHTML = "You win!";
@@ -129,58 +141,35 @@ btnList.forEach(function (btn) {
     else if (computerScore === 5) {
       scoreText.innerHTML = "The computer wins!"
     }
+
+    // Replace the play buttons with a retry, once pressed, load initial state
+    if (userScore === 5 | computerScore === 5) {
+
+      //Remove the initial buttons
+      const RPSbuttons = document.querySelectorAll('.RPSbutton')
+      RPSbuttons.forEach((button) => {
+        button.remove();
+      });
+
+      // Replace with a "Replay" button
+      const replayButton = document.createElement('button');
+      replayButton.id = "replayButton"
+      replayButton.textContent = "Replay?"
+
+      const buttonParent = document.querySelector('.buttons')
+      buttonParent.appendChild(replayButton);
+
+      //Refresh the page once clicked
+      const refreshButton = document.querySelector("#replayButton")
+
+      const refreshPage = () => {
+        location.reload()
+      }
+      
+      refreshButton.addEventListener('click',refreshPage)
+    }
+
   });
 });
 
-/*
 
-        //Make a function that will increase the score per round
-        function score() {
-
-        let roundWinner = playRound();
-        //After a win, add 1 to the score of either the user or computer
-        if (roundWinner === "USER WIN") {
-            userScore++;
-        }
-        if (roundWinner === "COMPUTER WIN") {
-            computerScore++;
-        }
-        console.log(roundWinner)
-        return (`USER ${userScore} - ${computerScore} COMPUTER`)
-        }
-    
-        //Make a function that will play 5 rounds of RPS
-        function game() {
-        console.log("%cGAME 1" , "color:red; font-size 14px")
-        console.log(score())
-        
-        //Play the game 5 times
-
-        console.log("%cGAME 2" , "color:red; font-size 14px")
-        console.log(score())
-        console.log("%cGAME 3" , "color:red; font-size 14px")
-        console.log(score())
-        console.log("%cGAME 4" , "color:red; font-size 14px")
-        console.log(score())
-        console.log("%cGAME 5" , "color:red; font-size 14px")
-        console.log(score())
-        
-
-        //Tell the user who won after 5 rounds
-        let winner ; if (userScore === computerScore) {
-            winner = "It's a draw!"
-        }
-        else if(userScore > computerScore) {
-            winner ="You win!"
-        }
-        else {
-            winner ="The computer won!"
-        }
-
-        return winner;
-        }
-
-        //Play the game on the console
-        console.log(`%c${game()}`,"color:blue");
-
-        */

@@ -11,6 +11,12 @@ img {
   margin: 20px;
 }
 
+#whoWonText{
+    font-size: 26px;
+    color: #225cbb;
+    font-weight: 600;
+}
+
 h1 {
     font-size: 60px;
 }
@@ -48,7 +54,7 @@ button {
     padding-right: 30px;
     padding-top: 5px;
     padding-bottom: 5px;
-    transition-duration: 0.4s;
+    transition-duration: 0.2s;
     text-decoration: none;
 }
 
@@ -56,7 +62,7 @@ button {
 button:hover {
     background-color: #e5e7eb;
     color: #225cbb;
-     font-size: 16px;
+    font-size: 16px;
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
@@ -65,5 +71,5 @@ button:hover {
     padding-right: 30px;
     padding-top: 5px;
     padding-bottom: 5px;
-    transition-duration: 0.4s;
+    transition-duration: 0.2s;
 }

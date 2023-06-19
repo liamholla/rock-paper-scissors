@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Rock,Paper,Scissors</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
   </head>
   <body>
     <div class="main-content">
@@ -17,17 +21,18 @@
       <p id="currentScoreText">The current score is 0 - 0</p>
       <p id="currentRoundText"></p>
       <div class="images">
-                <img src="https://cdn.pixabay.com/photo/2018/04/29/01/23/skin-3358873_1280.jpg" alt="Picture of a human">
-        <img
+        <img id="user" src="https://cdn.pixabay.com/photo/2018/04/29/01/23/skin-3358873_1280.jpg" alt="Picture of a human">
+        <img id="computer"
           src="https://cdn.pixabay.com/photo/2014/09/20/13/52/board-453758_1280.jpg"
           alt="Picture of a computer"
         />
       </div>
       <div class="buttons">
-        <button class="rock">Rock</button>
-        <button class="paper">Paper</button>
-        <button class="scissors">Scissors</button>
+        <button class="RPSbutton" id="rock">Rock</button>
+        <button class="RPSbutton" id="paper">Paper</button>
+        <button class="RPSbutton" id="scissors">Scissors</button>
       </div>
+      <div id="whoWonText"></div>
     </div>
   </body>
 </html>
